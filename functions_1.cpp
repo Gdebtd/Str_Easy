@@ -20,7 +20,7 @@ void itc_print_copy_str(string str, int number)
     int i = 0;
     while (i < number)
     {
-        cout << str << endl;
+        cout << str;
         i++;
     }
 }
@@ -30,14 +30,14 @@ void itc_first_end_three(string str)
     long long i = itc_len(str);
     if (i > 5)
     {
-        cout << str[0] << str[1] << str[2] << str[i - 1 - 2] << str[i - 1 - 1] << str[i - 1] << endl;
+        cout << str[0] << str[1] << str[2] << str[i - 3] << str[i - 2] << str[i - 1];
     }
     else
     {
-        long long k = 0;
+        int k = 0;
         while (k < i)
         {
-            cout << str[0] << endl;
+            cout << str[0];
             k++;
         }
     }
