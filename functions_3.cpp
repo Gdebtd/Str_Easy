@@ -6,20 +6,21 @@ string itc_cmp_str(string str1, string str2, int num)
     long long len2 = itc_len(str2);
     string str = "";
     long long i = 0;
-    while (i < len)
+    while (i < num)
     {
-        if (i < num)
-        {
-            str += str1[i];
-        }
-        else if (i < num + len2)
-        {
-            str += str2[i];
-        }
-        else if (i >= num + len2)
-        {
-            str += str1[i];
-        }
+        str += str1[i];
+    }
+    long long k = 0;
+    while (k < len2)
+    {
+        if (i + k == len)
+            return str;
+        str += str2[k];
+        k++;
+    }
+    while (i + k < len)
+    {
+        str += str1[i];
         i++;
     }
     return str;
