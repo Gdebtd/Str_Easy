@@ -31,7 +31,9 @@ double itc_percent_lower_uppercase(string str)
             countUpper++;
         i++;
     }
-    perc = countUpper / countLower;
+    if (countLower == 0 || countUpper == 0)
+        return -1;
+    perc = countLower / countUpper;
     return perc;
 }
 
