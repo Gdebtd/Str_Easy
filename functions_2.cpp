@@ -3,11 +3,13 @@
 string itc_even_place(string str)
 {
     string _str = "";
-    long long len(itc_len(str));
+    long long len = itc_len(str);
+    if (len <= 1)
+        return "-1";
     long long i = 0;
     while (i < len)
     {
-        if (i % 2 == 0)
+        if ((i + 1) % 2 == 0)
             _str += str[i];
         i++;
     }
