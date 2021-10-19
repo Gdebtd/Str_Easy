@@ -9,6 +9,7 @@ string itc_cmp_str(string str1, string str2, int num)
     while (i < num)
     {
         str += str1[i];
+        i++;
     }
     long long k = 0;
     while (k < len2)
