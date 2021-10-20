@@ -56,7 +56,32 @@ int itc_find_str(string str1, string str2)
 
 string itc_three_str(string str1, string str2, string str3)
 {
-    return "";
+    long long len = itc_len(str1);
+    long long len3 = itc_len(str3);
+    long long num = itc_find_str(str1, str2);
+    if (num = -1)
+        return str1;
+    string _str = "";
+    long long i = 0;
+    while (i < num)
+    {
+        _str += str1[i];
+        i++;
+    }
+    long long k = 0;
+    while (k < len3)
+    {
+        _str += str3[k];
+        k++;
+    }
+    i -= 1;
+    i += k;
+    while (i < len)
+    {
+        _str += str1[i];
+        i++;
+    }
+    return _str;
 }
 
 int itc_max_char_on_end(string str)
