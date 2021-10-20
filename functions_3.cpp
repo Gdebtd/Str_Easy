@@ -48,40 +48,43 @@ int itc_find_str(string str1, string str2)
             index = -1;
         }
         i++;
-        if (str2[i2 - 1] == str2[len2 - 1])
-            return index;
+		if (i2 > 0)
+		{
+			if (str2[i2 - 1] == str2[len2 - 1])
+				return index;
+		}
     }
     return -1;
 }
 
 string itc_three_str(string str1, string str2, string str3)
 {
-    long long len = itc_len(str1);
-    long long len3 = itc_len(str3);
-    long long num = itc_find_str(str1, str2);
-    if (num = -1)
-        return str1;
-    string _str = "";
-    long long i = 0;
-    while (i < num)
-    {
-        _str += str1[i];
-        i++;
-    }
-    long long k = 0;
-    while (k < len3)
-    {
-        _str += str3[k];
-        k++;
-    }
-    i -= 1;
-    i += k;
-    while (i < len)
-    {
-        _str += str1[i];
-        i++;
-    }
-    return _str;
+	long long len = itc_len(str1);
+	long long len3 = itc_len(str3);
+	long long num = itc_find_str(str1, str2);
+	if (num == -1)
+		return str1;
+	string _str = "";
+	long long i = 0;
+	while (i < num)
+	{
+		_str += str1[i];
+		i++;
+	}
+	long long k = 0;
+	while (k < len3)
+	{
+		_str += str3[k];
+		k++;
+	}
+	i -= 1;
+	i += k;
+	while (i < len)
+	{
+		_str += str1[i];
+		i++;
+	}
+	return _str;
 }
 
 int itc_max_char_on_end(string str)
