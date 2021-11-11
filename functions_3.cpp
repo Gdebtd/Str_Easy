@@ -67,6 +67,8 @@ string itc_three_str(string str1, string str2, string str3)
     long long len = itc_len(str1);
     long long len2 = itc_len(str2);
     long long num = itc_find_str(str1, str2);
+    if (len1 < len2)
+        return str1;
     if (num == -1)
 	return str1;
     string _str = "";
