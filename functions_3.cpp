@@ -2,11 +2,15 @@
 
 string itc_cmp_str(string str1, string str2, int num)
 {
+    if (str2 == "")
+        return str1;
+    if (num <= 0)
+	return "-1";
     long long len = itc_len(str1);
     long long len2 = itc_len(str2);
     string str = "";
     long long i = 0;
-    while (i < num)
+    while (i < num - 1)
     {
         str += str1[i];
         i++;
