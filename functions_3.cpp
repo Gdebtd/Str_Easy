@@ -18,10 +18,11 @@ string itc_cmp_str(string str1, string str2, int num)
             return str;
         str += str2[k];
         k++;
-    }
+    } 
+    i--;
     while (i + k < len)
     {
-        str += str1[i];
+        str += str1[i + k];
         i++;
     }
     return str;
@@ -60,7 +61,7 @@ int itc_find_str(string str1, string str2)
 string itc_three_str(string str1, string str2, string str3)
 {
     long long len = itc_len(str1);
-    long long len3 = itc_len(str3);
+    long long len2 = itc_len(str2);
     long long num = itc_find_str(str1, str2);
     if (num == -1)
 	return str1;
@@ -72,7 +73,7 @@ string itc_three_str(string str1, string str2, string str3)
 	i++;
     }
     long long k = 0;
-    while (k < len3)
+    while (k < len2)
     {
 	_str += str3[k];
 	k++;
