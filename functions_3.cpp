@@ -10,7 +10,7 @@ string itc_cmp_str(string str1, string str2, int num)
     long long len2 = itc_len(str2);
     string str = "";
     long long i = 0;
-    while (i < num)
+    while (i < num && i < len)
     {
         str += str1[i];
         i++;
