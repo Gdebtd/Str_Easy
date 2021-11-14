@@ -66,6 +66,7 @@ string itc_three_str(string str1, string str2, string str3)
 {
     long long len = itc_len(str1);
     long long len2 = itc_len(str2);
+    long long len3 = itc_len(str3);
     long long num = itc_find_str(str1, str2);
     if (len < len2)
         return str1;
@@ -81,10 +82,10 @@ string itc_three_str(string str1, string str2, string str3)
     long long k = 0;
     while (k < len2)
     {
-	_str += str3[k];
+	if (k < len3)
+	    _str += str3[k];
 	k++;
     }
-    i -= 1;
     i += k;
     while (i < len)
     {
@@ -96,6 +97,7 @@ string itc_three_str(string str1, string str2, string str3)
 
 int itc_max_char_on_end(string str)
 {
+    str += ' ';
     long long len = itc_len(str);
     long long i = 0;
     long long maxi = 0;
@@ -104,34 +106,15 @@ int itc_max_char_on_end(string str)
     {
 	if (str[i] >= '0' && str[i] <= '9')
 	{
-	    if (cnt == 0)
-	    {
-		cnt++;
-	    }
-	    else
-	    {
-		if (i > 0)
-		{
-		    if (str[i] - str[i - 1] == 1)
-			cnt++;
-		    else
-		    {
-			if (cnt > maxi)
-			    maxi = cnt;
-			cnt = 0;
-		    }
-		}
-	    }
+	    cnt++;
+        }
+        else
+        {
+	    if (cnt > maxi)
+	        maxi = cnt;
+	    cnt = 0;
+        }
+        i++;
     }
-    else
-    {
-	if (cnt > maxi)
-	    maxi = cnt;
-	cnt = 0;
-    }
-    i++;
-    }
-    if (cnt > maxi)
-	maxi = cnt;
     return maxi;
 }
